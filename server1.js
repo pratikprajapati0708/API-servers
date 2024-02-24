@@ -1,4 +1,5 @@
 const http = require("http");
+require('dotenv').config()
 
 const jsonData = {
   network: 7,
@@ -12,7 +13,7 @@ const server = http.createServer((req, res) => {
   res.end(JSON.stringify(jsonData));
 });
 
-const port = 3000;
+const port = process.env.PORT;
 
 server.listen(port, () => {
   console.log(`Server is listening on ${port}`);
